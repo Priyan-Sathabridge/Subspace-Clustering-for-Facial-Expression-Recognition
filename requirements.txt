@@ -1,0 +1,14 @@
+# Direct third-party imports used by the pipeline and research scripts.
+# Unpinned: capture a validated environment with pip freeze for reproducibility.
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+plotly
+umap-learn
+Pillow
+opencv-python
+insightface
+onnxruntime
+statsmodels
