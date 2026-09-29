@@ -1,14 +1,29 @@
-# Direct third-party imports used by the pipeline and research scripts.
-# Unpinned: capture a validated environment with pip freeze for reproducibility.
+# Python 3.10+ (the source uses Python 3.10 type annotations).
+# Install with: python -m pip install -r requirements.txt
+# Covers the main pipeline, evaluation plots and standalone parameter searches.
+# Versions are intentionally unpinned; this is not an environment lock file.
+# Record a validated run environment with: python -m pip freeze > environment.txt
+
+# Numerical processing, PCA, clustering and evaluation
 numpy
 pandas
 scipy
-scikit-learn
+scikit-learn  # imported as sklearn
+statsmodels  # multiple-testing correction for ANOVA
+
+# Static plots, interactive plots and dimensionality-reduction visualisations
 matplotlib
 plotly
-umap-learn
-Pillow
-opencv-python
+umap-learn  # imported as umap
+
+# Image loading and galleries
+Pillow  # imported as PIL
+opencv-python  # imported as cv2
+
+# Facial landmark detection and CPU model inference
 insightface
-onnxruntime
-statsmodels
+onnxruntime  # CPUExecutionProvider used by the detector
+
+# Standard-library and project-local modules do not require pip installation.
+# Dependencies of these packages are resolved automatically by pip.
+# InsightFace model assets are separate from Python package installation.
